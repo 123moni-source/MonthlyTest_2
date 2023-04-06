@@ -7,11 +7,21 @@ const path = require("path")
 const engine = require("ejs-mate")
 const app = express();
 const mongoose = require("mongoose");
+
+
+
 const methodOverride = require("method-override");
+
+
+
 const session = require("express-session")
 const flash = require("connect-flash");
 const User = require("./models/User")
+
 const passport = require("passport");
+
+
+
 var LocalStrategy = require('passport-local');
 
 const dbUrl = process.env.DB_URI
@@ -23,7 +33,9 @@ const sessionSecret = process.env.SESSION_SECRET || 'this is a secret session'
 
 //Connect to DB
 mongoose.connect(dbUrl, { useNewUrlParser: true,useUnifiedTopology: true })
+
 .then(()=> console.log(" DB CONNECTED!"))
+
 .catch((err)=> console.log(err));
 
 
